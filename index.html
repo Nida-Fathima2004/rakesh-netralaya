@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakesh Nethralaya - Super Speciality Eye Hospital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-blue: #007bff;
+            --secondary-blue: #0056b3;
+            --light-bg: #f8f9fa;
+            --text-color: #333;
+            --heading-color: #007bff;
+            --link-color: #007bff;
+        }
+
+        /* Basic Reset and Typography */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: white;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            color: var(--heading-color);
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        /* 1. Top Bar */
+        .top-bar {
+            background-color: #f1f1f1;
+            font-size: 0.85em;
+            color: #777;
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        /* 2. Header / Navigation Bar */
+        .main-header {
+            background-color: white;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.2em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-rn {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 5px 8px;
+            border-radius: 5px;
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active-link {
+            color: var(--primary-blue);
+        }
+
+        /* 3. Hero Section */
+        .hero {
+            /* Placeholder for the large background image (patient being examined) */
+            background: url('placeholder-hero-bg.jpg') no-repeat center center/cover;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.7); /* Light overlay */
+            pointer-events: none; /* Allows clicks to pass through */
+        }
+        
+        .hero-content {
+            z-index: 1;
+            padding-left: 10%;
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            color: var(--heading-color);
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        /* 4. Treatments/Services Section */
+        .treatments-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .treatment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 0 5%;
+        }
+
+        .treatment-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s;
+        }
+
+        .treatment-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .treatment-card p {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 20px;
+            min-height: 50px;
+        }
+
+        .btn-enquire {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-enquire:hover {
+            background-color: var(--secondary-blue);
+        }
+        
+        /* 5. About Us Section */
+        .about-section {
+            padding: 60px 0;
+            background-color: var(--light-bg);
+        }
+
+        .about-flex {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .about-text .section-title {
+            text-align: left;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 6. New Diseases/Conditions Section - Interactive Tab Structure */
+        .conditions-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .tabs-nav .tab-button {
+            padding: 10px 25px;
+            margin: 0 5px;
+            border: none;
+            font-size: 1em;
+            font-weight: 500;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tabs-nav .tab-button:not(.active) {
+            background: var(--light-bg);
+            color: var(--text-color);
+        }
+
+        .tabs-nav .tab-button.active {
+            background: var(--primary-blue);
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+        }
+
+        .tab-content-container {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .condition-tab {
+            display: flex;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .condition-info h3 {
+            color: var(--heading-color);
+            margin-bottom: 15px;
+        }
+
+        .condition-info ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+
+        .condition-info ul li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .condition-info ul li i {
+            color: var(--primary-blue);
+            margin-right: 10px;
+        }
+
+        .condition-image {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+        }
+
+        .condition-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* 7. Gallery Section */
+        .gallery-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+
+        /* 8. Videos Section */
+        .videos-section {
+            padding: 60px 0;
+            background-color: var(--light-bg);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .video-item {
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .video-item iframe {
+            display: block;
+            border: none;
+            height: 300px;
+        }
+
+        .video-caption {
+            padding: 15px;
+            font-weight: 500;
+        }
+
+        /* 9. Testimonials Section */
+        .testimonials-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .testimonial-layout {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .graphic-panel {
+            flex: 1;
+            text-align: center;
+        }
+
+        .graphic-panel img {
+            width: 80%;
+            border-radius: 10px;
+            max-width: 350px;
+        }
+
+        .testimonial-cards {
+            flex: 2;
+            display: flex;
+            gap: 30px;
+            position: relative;
+            /* Added overflow to contain cards when sliding/hiding */
+            overflow: hidden; 
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            min-width: 45%; /* Ensures two cards fit nicely */
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-card i.fa-quote-left {
+            color: var(--heading-color);
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .testimonial-card h4 {
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: 1px solid #ccc;
+            color: #333;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            z-index: 50;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background 0.2s;
+        }
+
+        .slider-btn:hover {
+            background: #eee;
+        }
+
+        .prev-btn { left: -30px; }
+        .next-btn { right: -30px; }
+
+        /* 10. Contact Us Section */
+        .contact-section {
+            padding: 60px 0;
+            background-color: var(--light-bg);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            flex-grow: 1;
+        }
+
+        .btn-submit {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 150px;
+            align-self: flex-start;
+        }
+
+        .contact-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .map-placeholder {
+            min-height: 350px;
+            background-color: #ddd;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .btn-get-direction {
+            background-color: var(--primary-blue);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .info-item i {
+            font-size: 1.5em;
+            color: var(--primary-blue);
+            margin-top: 5px;
+        }
+
+        /* 11. Utility Buttons (Floating buttons) */
+        .utility-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .utility-buttons a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white !important;
+            font-size: 1.2em;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0; /* Hidden by default, controlled by JS */
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        
+        /* Specific colors for the floating buttons */
+        .btn-scroll-up { background-color: var(--primary-blue); }
+        .btn-call { background-color: #007bff; opacity: 1; visibility: visible; }
+        .btn-whatsapp { background-color: #25D366; opacity: 1; visibility: visible; }
+        
+        /* Show scroll-up button only when needed */
+        .btn-scroll-up.show { opacity: 1; visibility: visible; }
+
+        /* Media Queries for basic responsiveness (essential for a modern site) */
+        @media (max-width: 992px) {
+            .hero-content { padding-left: 5%; }
+            .testimonial-layout, .about-flex { flex-direction: column; }
+            .testimonial-cards { justify-content: space-around; }
+            .graphic-panel img { width: 100%; max-width: 400px; margin-bottom: 20px; }
+            .contact-details-grid { grid-template-columns: 1fr; }
+            .condition-tab { flex-direction: column; }
+            .condition-image { max-width: 100%; }
+        }
+
+        @media (max-width: 768px) {
+            .main-nav ul { gap: 10px; }
+            .top-bar .container { justify-content: space-around; gap: 10px; }
+            .treatment-grid, .video-grid, .image-grid { grid-template-columns: 1fr; }
+            .form-row { flex-direction: column; gap: 10px; }
+            .testimonial-cards { flex-direction: column; gap: 10px; }
+            .testimonial-card { min-width: 100%; }
+            .slider-btn { display: none; } /* Hide slider buttons on small screens */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container">
+            <span><i class="fas fa-phone"></i> +91-9480427752</span>
+            <span><i class="fas fa-map-marker-alt"></i> Salagame Road</span>
+            <span><i class="fas fa-user"></i> Log In | Sign Up</span>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-rn">RN</span> Rakesh Nethralaya
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#treatments">TREATMENTS FOR</a></li>
+                    <li><a href="#about">ABOUT US</a></li>
+                    <li><a href="#conditions">CONDITIONS</a></li> <li><a href="#gallery">GALLERY</a></li>
+                    <li><a href="#videos">VIDEOS</a></li>
+                    <li><a href="#testimonials">TESTIMONIALS</a></li>
+                    <li><a href="#contact">CONTACT US</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Skilled Professionals</h1>
+            <p>Eye care with Dedication</p>
+        </div>
+    </section>
+
+    <section id="treatments" class="treatments-section">
+        <div class="container">
+            <h2 class="section-title">Treatments For</h2>
+            
+            <div class="treatment-grid">
+                <div class="treatment-card">
+                    <img src="C:\Users\Moham\Downloads\home.jpeg"
+ alt="Eye Surgeon Doctors">
+                    <h3>Eye Surgeon Doctors</h3>
+                    <p>With a team of experienced eye surgeon, we perform successful eye surgery for all kinds of eye problems.</p>
+                    <a href="#contact" class="btn-enquire">Enquire Now</a>
+                </div>
+                <div class="treatment-card">
+                    <img src="placeholder-ophthalmologists.jpg" alt="Ophthalmologists">
+                    <h3>Ophthalmologists</h3>
+                    <p>We are trained, experienced and reliable ophthalmologists. Feel free to contact us for any eye related issue.</p>
+                    <a href="#contact" class="btn-enquire">Enquire Now</a>
+                </div>
+                <div class="treatment-card">
+                    <img src="placeholder-glaucoma.jpg" alt="Glaucoma">
+                    <h3>Glaucoma</h3>
+                    <p>Glaucoma can result in partial or permanent loss of vision if left undiagnosed. Book an appointment.</p>
+                    <a href="#contact" class="btn-enquire">Enquire Now</a>
+                </div>
+                <div class="treatment-card">
+                    <img src="placeholder-ocula-prosthesis.jpg" alt="Ocula Prosthesis">
+                    <h3>Ocula Prosthesis</h3>
+                    <p>An ocular prosthesis is an artificial eye made of medical grade plastic that replaces a natural eye.</p>
+                    <a href="#contact" class="btn-enquire">Enquire Now</a>
+                </div>
+                <div class="treatment-card">
+                    <img src="placeholder-pediatric.jpg" alt="Pediatric Ophthalmology">
+                    <h3>Pediatric Ophthalmology</h3>
+                    <p>Pediatric ophthalmology deals with the diagnosis and treatment of eye diseases in children.</p>
+                    <a href="#contact" class="btn-enquire">Enquire Now</a>
+                </div>
+                <div class="treatment-card">
+                    <img src="placeholder-lasik.jpg" alt="Lasik & Refractive Surgery">
+                    <h3>Lasik & Refractive Surgery</h3>
+                    <p>Popular surgical method to address vision issues that include elimination of dependency on spectacles.</p>
+                    <a href="#contact" class="btn-enquire">Enquire Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container about-flex">
+            <div class="about-text">
+                <h2 class="section-title" style="text-align: left;">About Us</h2>
+                <p>We, Rakesh Nethralaya, situated at Salagame Road, Hassan, Karnataka are a super speciality eye hospital providing a wide range of complete eye treatments under one roof. Our motto is to provide best, comprehensive and affordable eye care with the latest comprehensive technologies. We are committed to achieve and maintain excellence in eye care. Our dedicated team of specialist doctors cater to all eye diseases from corneal pole to retinal pole of the eyeball and take care of paediatric to geriatric eye services. A full array of state of the art equipment and a high safety environment enables our doctors to diagnose and treat eye problems accurately, safely and effectively. With a focus to provide best eye care treatment, our eye hospital has always been on preventive ophthalmology and hence our activities are focused at information, education and informed consent at every step. We stand for a healthy vision of life. We are always abreast with the latest and newest in technology wherever required with patient satisfaction and quality of services being our priority.</p>
+            </div>
+            <div class="about-image">
+                <img src="placeholder-about-us.jpg" alt="Smiling patient getting eye exam">
+            </div>
+        </div>
+    </section>
+    
+    <section id="conditions" class="conditions-section">
+        <div class="container">
+            <h2 class="section-title">Common Eye Conditions</h2>
+
+            <div class="tabs-nav">
+                <button class="tab-button" data-tab="cataract">Cataract</button>
+                <button class="tab-button" data-tab="glaucoma">Glaucoma</button>
+                <button class="tab-button" data-tab="dryeye">Dry Eye Syndrome</button>
+            </div>
+
+            <div class="tab-content-container">
+                
+                <div id="cataract-tab" class="condition-tab">
+                    <div class="condition-info">
+                        <h3>What is Cataract?</h3>
+                        <p>A **cataract** is a clouding of the natural lens of the eye. It is the most common cause of vision loss in people over age 40 and is the principal cause of blindness in the world. It usually develops slowly and can affect one or both eyes. Modern treatment involves surgical removal.</p>
+                        <ul>
+                            <li><i class="fas fa-eye"></i> **Symptoms:** Cloudy/blurry vision, fading of colors, poor night vision.</li>
+                            <li><i class="fas fa-microscope"></i> **Treatment:** Surgical removal and replacement with an artificial intraocular lens (IOL).</li>
+                        </ul>
+                        <a href="#contact" class="btn-enquire" style="margin-top: 20px; display: inline-block;">Consult a Specialist</a>
+                    </div>
+                    <div class="condition-image">
+                        <img src="placeholder-cataract.jpg" alt="Image of a cloudy eye">
+                    </div>
+                </div>
+
+                <div id="glaucoma-tab" class="condition-tab" style="display: none;">
+                    <div class="condition-info">
+                        <h3>What is Glaucoma?</h3>
+                        <p>**Glaucoma** is a group of eye conditions that damage the optic nerve, the health of which is vital for good vision. This damage is often caused by an abnormally high pressure in your eye. It is one of the leading causes of blindness.</p>
+                        <ul>
+                            <li><i class="fas fa-eye"></i> **Symptoms:** Often no symptoms initially, leading to silent vision loss. Peripheral vision loss is common.</li>
+                            <li><i class="fas fa-pills"></i> **Treatment:** Eyedrops, oral medication, laser treatment, or surgery to lower eye pressure.</li>
+                        </ul>
+                        <a href="#contact" class="btn-enquire" style="margin-top: 20px; display: inline-block;">Consult a Specialist</a>
+                    </div>
+                    <div class="condition-image">
+                        <img src="placeholder-glaucoma-eye.jpg" alt="Image representing optic nerve damage">
+                    </div>
+                </div>
+
+                <div id="dryeye-tab" class="condition-tab" style="display: none;">
+                    <div class="condition-info">
+                        <h3>Dry Eye Syndrome</h3>
+                        <p>**Dry Eye Syndrome** is a common condition that occurs when your tears aren't able to provide adequate lubrication for your eyes. This can be due to insufficient tears or poor quality tears. It causes discomfort and sometimes vision problems.</p>
+                        <ul>
+                            <li><i class="fas fa-tint"></i> **Symptoms:** Stinging, burning, scratchiness, sensitivity to light, and watery eyes.</li>
+                            <li><i class="fas fa-prescription-bottle-alt"></i> **Treatment:** Artificial tears, prescription eye drops, or minor procedures like punctal plugs.</li>
+                        </ul>
+                        <a href="#contact" class="btn-enquire" style="margin-top: 20px; display: inline-block;">Consult a Specialist</a>
+                    </div>
+                    <div class="condition-image">
+                        <img src="placeholder-dry-eye.jpg" alt="Image representing dry eye discomfort">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="image-grid">
+                <div class="gallery-item"><img src="placeholder-gallery-1.jpg" alt="Eye examination 1"></div>
+                <div class="gallery-item"><img src="placeholder-gallery-2.jpg" alt="Eye examination 2"></div>
+                <div class="gallery-item"><img src="placeholder-gallery-3.jpg" alt="Optical equipment"></div>
+                <div class="gallery-item"><img src="placeholder-gallery-4.jpg" alt="Eye examination 4"></div>
+                <div class="gallery-item"><img src="placeholder-gallery-5.jpg" alt="Eye surgery"></div>
+                <div class="gallery-item"><img src="placeholder-gallery-6.jpg" alt="Eye equipment panel"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos" class="videos-section">
+        <div class="container">
+            <h2 class="section-title">Videos</h2>
+            <div class="video-grid">
+                <div class="video-item">
+                    <iframe width="100%" height="300" src="https://www.youtube.com/embed/placeholder-facts" title="YouTube video player 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="video-caption">What to Expect on Your Next Eye Doctor Visit During COVID-19</p>
+                </div>
+                <div class="video-item">
+                    <iframe width="100%" height="300" src="https://www.youtube.com/embed/placeholder-eye-exam" title="YouTube video player 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="video-caption">Why You Need an Eye Exam</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-section">
+        <div class="container testimonial-layout">
+            <div class="graphic-panel">
+                <img src="placeholder-eye-graphic.jpg" alt="Eye graphic">
+            </div>
+            <div class="testimonial-cards" id="testimonial-slider">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <h4>Mohit Sharma</h4>
+                    <p>Will surely refer to others. They provide very effective treatment for any eye disorder.</p>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <h4>Nilesh Rathod</h4>
+                    <p>Certainly 5 stars. Really satisfied with the results of the eye surgery they performed on me.</p>
+                </div>
+                <div class="testimonial-card" style="transform: translateX(100%); position: absolute; top:0; left: 50%; display: none;">
+                    <i class="fas fa-quote-left"></i>
+                    <h4>Sneha Patel</h4>
+                    <p>The staff was compassionate and the facility was state-of-the-art. Highly recommend!</p>
+                </div>
+                <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-row">
+                    <input type="text" placeholder="Full Name" name="fullname">
+                    <input type="email" placeholder="Email ID" name="email">
+                    <input type="tel" placeholder="Mobile Number" name="mobile">
+                </div>
+                <textarea placeholder="Message" name="message"></textarea>
+                <button type="submit" class="btn-submit">Submit</button>
+            </form>
+
+            <div class="contact-details-grid">
+                <div class="map-placeholder">
+                    <p>Google Map Placeholder</p>
+                    <a href="#" class="btn-get-direction">Get Direction</a>
+                </div>
+
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <address>
+                            <strong>Our Office Address</strong><br>
+                            Rakesh Nethralaya,Near Arali Katte Samskrutha Bhavana,Aralikatte Road, Salagame Road, Hassan, Karnataka 573201
+                        </address>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <strong>General Enquiries</strong><br>
+                        drmrrakesh@gmail.com
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <strong>Call Us</strong><br>
+                        +91-9480427752 | +91-9986137733 | 08172-233653 | 08172-268691
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <strong>Our Timing</strong><br>
+                        Mon - Sun : Open 24 hrs
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="utility-buttons">
+        <a href="#home" class="btn-scroll-up"><i class="fas fa-chevron-up"></i></a>
+        <a href="tel:+919480427752" class="btn-call"><i class="fas fa-phone"></i></a>
+        <a href="https://wa.me/919480427752" target="_blank" class="btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <script>
+        // Store all section IDs for navigation highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.main-nav a');
+
+        // Function 1: Navigation Link Highlighting (Active State)
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - document.querySelector('.main-header').offsetHeight - 50; // Adjust for header height
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(a => {
+                a.classList.remove('active-link');
+                if (a.getAttribute('href').includes(current)) {
+                    a.classList.add('active-link');
+                }
+            });
+        });
+
+        // Function 2: Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // Ignore hash links that aren't section IDs (like the enquire button)
+                if (this.getAttribute('href').length > 1) { 
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Function 3: Interactive Disease Tab Functionality
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+                
+                // Deactivate all buttons and content
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelectorAll('.condition-tab').forEach(content => {
+                    content.style.display = 'none';
+                });
+
+                // Activate the clicked button and corresponding content
+                this.classList.add('active');
+                document.getElementById(tabName + '-tab').style.display = 'flex';
+            });
+        });
+
+        // Initialize: Click the first tab on page load
+        document.querySelector('.tab-button[data-tab="cataract"]').click();
+
+
+        // Function 4: Simple Testimonial Slider Functionality
+        const slider = document.getElementById('testimonial-slider');
+        const cards = slider.querySelectorAll('.testimonial-card');
+        const totalCards = cards.length;
+        let currentIndex = 0;
+        const cardsPerPage = 2; // Show 2 cards at a time
+
+        function updateSlider() {
+            // Apply a transform to the inner card container to slide
+            const offset = -(currentIndex * (100 / cardsPerPage));
+            slider.style.transform = `translateX(${offset}%)`;
+            
+            // Note: For this simple example, we are hiding the 3rd card via CSS/positioning
+            // A more robust slider would dynamically change the content/positioning.
+        }
+
+        document.querySelector('.next-btn').addEventListener('click', () => {
+            // Stop at the last slide where we still see 2 cards
+            if (currentIndex < totalCards - cardsPerPage) {
+                currentIndex++;
+                updateSlider();
+            } else {
+                // Optional: Loop back to start
+                // currentIndex = 0;
+                // updateSlider();
+            }
+        });
+
+        document.querySelector('.prev-btn').addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlider();
+            }
+        });
+
+        // Function 5: Scroll-to-Top Button Visibility
+        const scrollUpButton = document.querySelector('.btn-scroll-up');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollUpButton.classList.add('show');
+            } else {
+                scrollUpButton.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
