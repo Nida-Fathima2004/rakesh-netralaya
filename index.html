@@ -200,7 +200,12 @@
         .btn-enquire:hover {
             background-color: var(--secondary-blue);
         }
-        
+        .testimonial-cards {
+    display: flex;
+    flex-direction: column;   /* STACK VERTICALLY */
+    gap: 20px;               /* SPACE BETWEEN CARDS */
+}
+
         /* 5. About Us Section */
         .about-section {
             padding: 60px 0;
@@ -782,7 +787,7 @@
     </section>
 
 <section id="testimonials" class="testimonials-section">
-    <h2 class="section-title">Our Doctors</h2>
+    <h2 class="section-title"Doctors</h2>
 
     <div class="container testimonial-layout">
 
@@ -800,16 +805,26 @@
                 <p>Will surely refer to others. They provide very effective treatment for any eye disorder.</p>
             </div>
 
+        </div>
+         <!-- Graphic Panel -->
+        <div class="graphic-panel">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1200px-User-avatar.svg.png" alt="Doctor Avatar">
+        </div>
+
+        <!-- Testimonials -->
+        <div class="testimonial-cards">
+
             <div class="testimonial-card">
                 <i class="fas fa-quote-left"></i>
-                <h4>Sneha Patel</h4>
-                <p>The staff was compassionate and the facility was state-of-the-art. Highly recommend!</p>
+                <h4>Mohit Sharma</h4>
+                <p>Will surely refer to others. They provide very effective treatment for any eye disorder.</p>
             </div>
 
         </div>
 
     </div>
 </section>
+
 
 
 
