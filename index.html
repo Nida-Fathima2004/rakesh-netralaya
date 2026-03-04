@@ -326,6 +326,22 @@
             border-radius: 8px;
             display: block;
         }
+        .gallery-btn{
+    padding:10px 25px;
+    margin:5px;
+    border:none;
+    font-size:1em;
+    font-weight:500;
+    border-radius:25px;
+    cursor:pointer;
+    background:#f1f1f1;
+    transition:all 0.3s;
+}
+
+.gallery-btn.active{
+    background:#007bff;
+    color:white;
+}
 
         /* 8. Videos Section */
         .videos-section {
@@ -1109,17 +1125,25 @@
                 scrollUpButton.classList.remove('show');
             }
         });
-        // Gallery Category Switching
-document.querySelectorAll('.gallery-btn').forEach(btn=>{
-    btn.addEventListener('click',function(){
+     document.addEventListener("DOMContentLoaded", function(){
 
-        document.querySelectorAll('.gallery-btn').forEach(b=>b.classList.remove('active'));
-        document.querySelectorAll('.gallery-group').forEach(g=>g.style.display='none');
+    document.querySelectorAll('.gallery-btn').forEach(btn=>{
+        btn.addEventListener('click',function(){
 
-        this.classList.add('active');
-        document.getElementById('gallery-'+this.dataset.gallery).style.display='block';
-    })
-})
+            document.querySelectorAll('.gallery-btn')
+            .forEach(b=>b.classList.remove('active'));
+
+            document.querySelectorAll('.gallery-group')
+            .forEach(g=>g.style.display='none');
+
+            this.classList.add('active');
+
+            document.getElementById('gallery-'+this.dataset.gallery)
+            .style.display='block';
+        })
+    });
+
+});
     </script>
 </body>
 </html>
